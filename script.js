@@ -6,16 +6,13 @@ function calculate() {
     const waist = parseFloat(document.getElementById('waist').value);
     const neck = parseFloat(document.getElementById('neck').value);
 
-    // Calculate Body Fat Percentage and BMI
-    let bodyFatPercentage;
+    // Calculate BMI based on gender
+    let bmi;
     if (gender === 'male') {
-        bodyFatPercentage = 10.1-(0.239(height))+(0.8(waist))-(0.5(neck));
+        bmi = 10.1 - 0.239 * height + 0.8 * waist - 0.5 * neck;
     } else {
-        bodyFatPercentage = 19.2-(0.239(height))+(0.8(waist))-(0.5(neck));
+        bmi = 19.2 - 0.239 * height + 0.8 * waist - 0.5 * neck;
     }
-
-    // Calculate BMI
-    const bmi = weight / ((height / 100) ** 2);
 
     // Determine the color based on age and BMI
     let color;
@@ -36,7 +33,6 @@ function calculate() {
     // Display the results with the appropriate color
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
-        <p style="color: ${color};">Body Fat Percentage: ${bodyFatPercentage.toFixed(2)}%</p>
         <p style="color: ${color};">BMI: ${bmi.toFixed(2)}</p>
     `;
 }
