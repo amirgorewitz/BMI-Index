@@ -9,9 +9,9 @@ function calculate() {
     // Calculate Body Fat Percentage and BMI (using the U.S. Navy method)
     let bodyFatPercentage;
     if (gender === 'male') {
-        bodyFatPercentage = 86.010 * Math.log10(waist - neck) - 70.041 * Math.log10(height) + 36.76;
+        bodyFatPercentage = 10.1-0.239(height)+0.8(age)-0.5(neck);
     } else {
-        bodyFatPercentage = 163.205 * Math.log10(waist + hip - neck) - 97.684 * Math.log10(height) - 78.387;
+        bodyFatPercentage = 19.2-0.239(height)+0.8(age)-0.5(neck);
     }
 
     // Calculate BMI
