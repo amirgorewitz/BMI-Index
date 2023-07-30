@@ -6,12 +6,12 @@ function calculate() {
     const waist = parseFloat(document.getElementById('waist').value);
     const neck = parseFloat(document.getElementById('neck').value);
 
-    // Calculate Body Fat Percentage and BMI (using the U.S. Navy method)
+    // Calculate Body Fat Percentage and BMI
     let bodyFatPercentage;
     if (gender === 'male') {
-        bodyFatPercentage = 10.1-0.239(height)+0.8(waist)-0.5(neck);
+        bodyFatPercentage = 10.1-(0.239(height))+(0.8(waist))-(0.5(neck));
     } else {
-        bodyFatPercentage = 19.2-0.239(height)+0.8(waist)-0.5(neck);
+        bodyFatPercentage = 19.2-(0.239(height))+(0.8(waist))-(0.5(neck));
     }
 
     // Calculate BMI
