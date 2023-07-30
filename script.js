@@ -1,6 +1,6 @@
 function calculate() {
     const gender = document.getElementById('gender').value;
-    const ageGroup = document.getElementById('age').value;
+    const age = parseInt(document.getElementById('age').value);
     const weight = parseFloat(document.getElementById('weight').value);
     const height = parseFloat(document.getElementById('height').value);
     const waist = parseFloat(document.getElementById('waist').value);
@@ -19,15 +19,15 @@ function calculate() {
 
     // Determine the color based on age and BMI
     let color;
-    if (ageGroup === 'below-65' && bmi <= 25) {
+    if (age <= 64 && bmi <= 25) {
         color = 'lightgreen';
-    } else if (ageGroup === 'below-65' && bmi > 25 && bmi <= 30) {
+    } else if (age <= 64 && bmi > 25 && bmi <= 30) {
         color = 'orange';
-    } else if (ageGroup === 'below-65' && bmi > 30) {
+    } else if (age <= 64 && bmi > 30) {
         color = 'red';
-    } else if (ageGroup === 'above-65' && bmi <= 30) {
+    } else if (age >= 65 && bmi <= 30) {
         color = 'lightgreen';
-    } else if (ageGroup === 'above-65' && bmi > 30 && bmi <= 35) {
+    } else if (age >= 65 && bmi > 30 && bmi <= 35) {
         color = 'orange';
     } else {
         color = 'red';
