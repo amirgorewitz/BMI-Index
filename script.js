@@ -33,6 +33,7 @@ function calculate() {
     // Display the results with the appropriate color
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = `
+        <p style="color: ${color};">Body Fat Percentage: ${bodyFatPercentage.toFixed(2)}%</p>
         <p style="color: ${color};">BMI: ${bmi.toFixed(2)}</p>
     `;
 }
