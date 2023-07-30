@@ -7,13 +7,16 @@ function calculate() {
     const neck = parseFloat(document.getElementById('neck').value);
 
     // Calculate BMI based on gender
-    let bmi;
+    let bodyFatPercentage;
     if (gender === 'male') {
-        bmi = 10.1 - 0.239 * height + 0.8 * waist - 0.5 * neck;
+        bodyFatPercentage = 10.1 - 0.239 * height + 0.8 * waist - 0.5 * neck;
     } else {
-        bmi = 19.2 - 0.239 * height + 0.8 * waist - 0.5 * neck;
+        bodyFatPercentage = 19.2 - 0.239 * height + 0.8 * waist - 0.5 * neck;
     }
 
+    // Calculate BMI
+    const bmi = weight / ((height / 100) ** 2);
+    
     // Determine the color based on age and BMI
     let color;
     if (age <= 64 && bmi <= 25) {
